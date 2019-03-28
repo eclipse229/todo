@@ -1,0 +1,21 @@
+{% extends 'checker/base.html' %}
+{% block title %}My Scheduler{% endblock %}
+{% block content %}
+<h1>My Scheduler</h1>
+{% for checker in checker %}
+<h2>
+    <a href="{{ Checker.get_absolute_url }}">
+        {{ checker.title }} {{ checker.date}}
+    </a>
+</h2>
+<p class="date">
+    Meeting {{ checker.id }} :{{ checker.title }}
+</p>
+{{ checker.activity_note|linebreaks }}
+<p class="date">
+    {{checker.status}}
+</p>
+{% endfor %}
+{% include "paginate.html" with page=page_obj %}
+{% endblock %}
+}

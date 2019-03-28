@@ -1,0 +1,9 @@
+{% extends "checker/base.html" %}
+{% block title %}{{ checker.title }}{% endblock %}
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p class="date">
+    status {{ checker.id }} by {{ checker.title }}
+</p>
+{{ checker.activity_note|linebreaks }}
+{% endblock %}
